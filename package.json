@@ -1,8 +1,10 @@
 {
   "name": "edge-window-detector",
+  "repository": "https://github.com/smallstepman/vscode-edge-window-detector.git",
+  "license": "MIT",
   "displayName": "edge-window-detector",
   "description": "detects if currently active editor group is at the edge of window",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "engines": {
     "vscode": "^1.95.0"
   },
@@ -23,8 +25,9 @@
     ]
   },
   "activationEvents": [
-    "onCommand:edge-detector.checkLeftRightEdge",
-    "onCommand:edge-detector.checkTopBottomEdge"
+    "onStartupFinished",
+    "onDidOpenTextDocument",
+    "onDidChangeActiveTextEditor"
   ],
   "scripts": {
     "vscode:prepublish": "npm run compile",
